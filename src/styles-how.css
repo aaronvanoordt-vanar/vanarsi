@@ -1,0 +1,173 @@
+/* ============ HOW V2 — graphical flow ============ */
+.how-v2 .how-flow {
+  margin-top: 60px;
+  position: relative;
+}
+
+/* Horizontal rail across all 3 stages */
+.how-rail {
+  position: relative;
+  height: 2px;
+  margin: 0 calc(100%/6) 40px;   /* centered above each stage */
+  background: transparent;
+}
+.how-rail-line {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--line-2) 8%,
+    var(--accent-2) 50%,
+    var(--line-2) 92%,
+    transparent 100%);
+  opacity: 0.5;
+}
+.how-rail-pulse {
+  position: absolute; top: -1px; width: 50px; height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  border-radius: 2px;
+  animation: how-pulse 4s linear infinite;
+  filter: blur(0.5px);
+}
+@keyframes how-pulse {
+  0% { left: 0%; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { left: calc(100% - 50px); opacity: 0; }
+}
+.how-rail-node {
+  position: absolute; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--bg-elev);
+  border: 2px solid var(--accent-2);
+  box-shadow: 0 0 16px rgba(90,139,255,0.35);
+}
+.how-rail-node::before {
+  content: ""; position: absolute;
+  inset: 3px; border-radius: 50%;
+  background: var(--accent-2);
+}
+
+/* 3 stages side-by-side */
+.how-stages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.how-stage {
+  position: relative;
+  padding: 32px 28px 28px;
+  background: rgba(10, 20, 48, 0.45);
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.3s ease;
+}
+.how-stage:hover {
+  border-color: rgba(90,139,255,0.4);
+  background: rgba(10, 20, 48, 0.75);
+  transform: translateY(-3px);
+}
+.how-stage-head {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-bottom: 4px;
+}
+.how-stage-n {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--ink-mute);
+  padding-top: 8px;
+}
+.how-stage-icon {
+  display: flex;
+  width: 56px; height: 56px;
+  align-items: center; justify-content: center;
+  color: var(--accent-2);
+  background: radial-gradient(circle at 30% 30%, rgba(90,139,255,0.2), rgba(90,139,255,0.04));
+  border: 1px solid rgba(90,139,255,0.25);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+.how-stage-icon svg { width: 32px; height: 32px; }
+.how-stage:hover .how-stage-icon {
+  color: var(--ink);
+  transform: rotate(-3deg) scale(1.05);
+}
+.how-stage-t {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 400; letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+}
+.how-stage-d {
+  font-size: 14px; line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 34ch;
+}
+.how-stage-tags {
+  margin-top: auto; padding-top: 14px;
+  display: flex; flex-wrap: wrap; gap: 6px;
+  border-top: 1px dashed var(--line-2);
+}
+.how-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  padding: 4px 8px;
+  background: rgba(90,139,255,0.08);
+  border: 1px solid rgba(90,139,255,0.2);
+  border-radius: 3px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+
+/* Foot band */
+.how-outcome {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(5, 10, 28, 0.5);
+}
+.how-outcome-cell {
+  padding: 20px 24px;
+  display: flex; flex-direction: column; gap: 6px;
+  border-right: 1px solid var(--line-2);
+}
+.how-outcome-cell:last-child { border-right: none; }
+.how-outcome-l {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.how-outcome-v {
+  font-size: 18px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
+.how-outcome-v.serif {
+  font-family: 'Instrument Serif', serif;
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--accent-2);
+}
+
+@media (max-width: 960px) {
+  .how-stages { grid-template-columns: 1fr; }
+  .how-rail { display: none; }
+  .how-outcome { grid-template-columns: 1fr; }
+  .how-outcome-cell { border-right: none; border-bottom: 1px solid var(--line-2); }
+  .how-outcome-cell:last-child { border-bottom: none; }
+}

@@ -1,0 +1,143 @@
+/* ============ PRINT OVERRIDES ============ */
+@page {
+  size: A4;
+  margin: 12mm 10mm;
+}
+
+@media print {
+  /* Enable background colors/images in print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  html, body {
+    background: #05091C !important;
+    color: #EDF2FF !important;
+  }
+
+  /* Disable animations/transitions */
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  /* Hide elements that don't belong in print */
+  .nav,
+  .cursor-glow,
+  .hero-glow,
+  .globe-foot,
+  .client-marquee,                /* logo tickers are animated; drop */
+  .roi-preset,
+  .roi-cta,
+  #roi,                           /* interactive ROI calculator */
+  .pain-divider,
+  .pain-range,
+  .pain-chips,
+  .pain-tabs-v2,
+  .pain-hint-bar,
+  .how-rail-pulse,
+  .tweak-panel,
+  [data-edit-mode],
+  button[aria-label],
+  .scroll-cue {
+    display: none !important;
+  }
+
+  /* Convert sticky/fixed elements to static */
+  header, nav, .nav, .sticky {
+    position: static !important;
+  }
+
+  /* Allow content to flow across pages naturally */
+  .hero,
+  .hero .container,
+  .hero-right,
+  .pain-stage,
+  .pillars-section,
+  .pillars-grid,
+  body,
+  section,
+  .section {
+    overflow: visible !important;
+  }
+
+  /* Page breaks between major sections */
+  section,
+  .section,
+  .stats-section,
+  .hero {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  section + section,
+  .section + .section,
+  .hero + * {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  /* Avoid breaking certain cards */
+  .pillar-card,
+  .how-stage,
+  .rel-card,
+  .stat-cell,
+  .proof-cell,
+  .diff-card,
+  .proof-case {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Pain slider: show both panels stacked, no clipPath */
+  .pain-stage {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto !important;
+    min-height: 0 !important;
+  }
+  .pain-panel.before,
+  .pain-panel.after {
+    clip-path: none !important;
+    grid-column: 1 / -1 !important;
+    position: relative !important;
+    break-inside: avoid !important;
+  }
+  .pain-panel.before { grid-row: 1 !important; border-bottom: 1px solid rgba(237,242,255,0.08) !important; }
+  .pain-panel.after  { grid-row: 2 !important; }
+
+  /* Globe: let it render as-is but don't bleed off page */
+  .hero-two { grid-template-columns: 1.1fr 0.9fr !important; gap: 24px !important; }
+  .hero-right { min-height: 420px !important; }
+  .globe-wrap {
+    position: relative !important;
+    left: auto !important; top: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 520px !important;
+  }
+
+  /* Tighten sizes for paged layout */
+  .hero { padding: 24px 0 !important; min-height: 0 !important; }
+  .section { padding: 32px 0 !important; }
+  .container { max-width: 100% !important; padding: 0 !important; }
+
+  /* Ensure link colors print */
+  a { color: inherit !important; text-decoration: none !important; }
+
+  /* Grid defaults for print - allow content flow */
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .proof-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .how-stages {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
