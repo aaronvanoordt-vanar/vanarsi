@@ -122,13 +122,19 @@ button { font-family: inherit; cursor: pointer; border: 0; background: none; col
 
 /* Logo */
 .logo {
-  display: flex; align-items: center; gap: 12px;
-  font-weight: 500; letter-spacing: -0.02em; font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 .logo-img {
-  height: 44px; width: auto;
   display: block;
-  border-radius: 4px;
+  width: auto;
+  /* Suaviza los bordes del recorte sobre fondos navy */
+  filter: drop-shadow(0 0 0.5px rgba(237, 242, 255, 0.04));
+}
+.logo-nav    .logo-img { height: 44px; }
+.logo-footer .logo-img { height: 56px; margin-bottom: 14px; }
+@media (max-width: 600px) {
+  .logo-nav .logo-img { height: 38px; }
 }
 .logo-type {
   font-weight: 500;

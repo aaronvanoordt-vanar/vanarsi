@@ -1,10 +1,10 @@
 /* global React */
 const { useState, useEffect } = React;
 
-function Logo({ withSub = false }) {
+function Logo({ variant = "nav" }) {
   return (
-    <div className="logo">
-      <img src="assets/vanar-logo-sm.png?v=5" alt="Vanar — Soluciones Integrales" className="logo-img" />
+    <div className={`logo logo-${variant}`}>
+      <img src="assets/vanar-logo-nav.png?v=1" alt="Vanar — Soluciones Integrales" className="logo-img" />
     </div>
   );
 }
@@ -588,7 +588,7 @@ function Footer({ t, lang }) {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <Logo />
+            <Logo variant="footer" />
             <p className="footer-tag">{t.footer.strap}</p>
           </div>
           <div className="footer-col">
