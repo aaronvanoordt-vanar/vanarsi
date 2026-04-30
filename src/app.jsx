@@ -26,7 +26,7 @@ function Nav({ t, lang, setLang }) {
         <div className="nav-links">
           <a href="#pillars">{t.nav.services}</a>
           <a href="#how">{t.nav.what}</a>
-          <a href="#product">{t.nav.product}</a>
+          <a href="https://predictable.vanarsi.com" target="_blank" rel="noopener">{t.nav.product}</a>
           <a href="#proof">{t.nav.proof}</a>
           <a href="#contact">{t.nav.contact}</a>
         </div>
@@ -69,7 +69,7 @@ function Hero({ t, lang }) {
         <p className="hero-sub">{t.hero.sub}</p>
         <div className="hero-actions">
           <a href="#contact" className="btn btn-primary">{t.hero.cta_primary} <ArrowIcon /></a>
-          <a href="#product" className="btn btn-ghost">{t.hero.cta_secondary}</a>
+          <a href="https://predictable.vanarsi.com" target="_blank" rel="noopener" className="btn btn-ghost">{t.hero.cta_secondary}</a>
         </div>
         <div className="hero-meta">
           <span>{t.hero.meta_a}</span>
