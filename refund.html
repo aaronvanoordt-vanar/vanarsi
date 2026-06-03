@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Política de Reembolso · Vanar LLC</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=3" />
+<link rel="shortcut icon" href="assets/favicon-32.png?v=3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #0A1430;
+  --bg-elev: #101D43;
+  --bg-elev-2: #162552;
+  --ink: #EDF2FF;
+  --ink-soft: #A9B5D4;
+  --ink-mute: #6E7BA0;
+  --line: rgba(237,242,255,0.08);
+  --line-2: rgba(237,242,255,0.14);
+  --accent: #5A8BFF;
+  --accent-2: #87B0FF;
+  --positive: #4BD39A;
+  --warn: #FFB070;
+  --risk: #FF8577;
+  --radius: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 600px) { .container { padding: 0 20px; } }
+
+.legal-nav {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  position: sticky; top: 0;
+  background: rgba(10,20,48,0.92);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+.legal-nav-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.logo-img { height: 28px; display: block; }
+.nav-back {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-mute);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.nav-back:hover { color: var(--ink); text-decoration: none; }
+.lang-toggle { display: flex; gap: 6px; }
+.lang-toggle button {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.1em;
+  border: 1px solid var(--line-2);
+  background: none; color: var(--ink-mute);
+  padding: 4px 10px; border-radius: 4px; cursor: pointer;
+  transition: all 0.15s;
+}
+.lang-toggle button.active, .lang-toggle button:hover {
+  color: var(--ink); border-color: var(--accent); background: rgba(90,139,255,0.08);
+}
+
+.legal-header { padding: 80px 0 56px; border-bottom: 1px solid var(--line); }
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent-2); display: inline-flex; align-items: center; gap: 10px;
+}
+.eyebrow::before {
+  content: ""; width: 24px; height: 1px;
+  background: var(--accent); display: inline-block; opacity: 0.7;
+}
+.legal-title {
+  font-size: clamp(28px, 4vw, 44px); font-weight: 500;
+  letter-spacing: -0.028em; margin: 20px 0 12px; line-height: 1.1;
+}
+.legal-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em; color: var(--ink-mute);
+}
+
+.legal-body { padding: 64px 0 120px; }
+.legal-section { margin-bottom: 56px; }
+.legal-section h2 {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent-2);
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0 0 20px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.legal-section h3 {
+  font-size: 15px; font-weight: 500; color: var(--ink);
+  margin: 24px 0 8px; letter-spacing: -0.01em;
+}
+.legal-section p { color: var(--ink-soft); font-size: 15px; margin-bottom: 14px; }
+.legal-section ul { margin: 0 0 14px 0; padding-left: 20px; color: var(--ink-soft); font-size: 15px; }
+.legal-section ul li { margin-bottom: 6px; }
+.entity-box {
+  background: var(--bg-elev-2); border: 1px solid var(--line-2);
+  border-radius: var(--radius); padding: 20px 24px; margin-bottom: 24px;
+}
+.entity-box .row { display: flex; gap: 8px; margin-bottom: 6px; font-size: 14px; }
+.entity-box .row:last-child { margin-bottom: 0; }
+.entity-box .label {
+  color: var(--ink-mute); min-width: 130px; font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; padding-top: 2px;
+}
+.entity-box .val { color: var(--ink-soft); }
+
+/* Summary table */
+.refund-table {
+  width: 100%; border-collapse: collapse; margin-bottom: 24px;
+  font-size: 14px;
+}
+.refund-table th {
+  text-align: left; padding: 10px 14px;
+  background: var(--bg-elev-2); color: var(--ink-mute);
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  border-bottom: 1px solid var(--line-2);
+}
+.refund-table td {
+  padding: 12px 14px; border-bottom: 1px solid var(--line);
+  color: var(--ink-soft); vertical-align: top;
+}
+.refund-table tr:last-child td { border-bottom: none; }
+.refund-table .type-col { color: var(--ink); font-weight: 500; }
+.badge {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;
+}
+.badge-yes { background: rgba(75,211,154,0.12); color: var(--positive); }
+.badge-partial { background: rgba(255,176,112,0.12); color: var(--warn); }
+.badge-no { background: rgba(255,133,119,0.1); color: var(--risk); }
+
+.notice-box {
+  background: rgba(90,139,255,0.06); border: 1px solid rgba(90,139,255,0.2);
+  border-radius: var(--radius); padding: 16px 20px; margin-bottom: 24px;
+}
+.notice-box p { color: var(--ink-soft); font-size: 14px; margin: 0; }
+
+.legal-footer { border-top: 1px solid var(--line); padding: 32px 0; }
+.legal-footer-row {
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.08em; color: var(--ink-mute); gap: 16px; flex-wrap: wrap;
+}
+.legal-links { display: flex; gap: 20px; }
+.legal-links a { color: var(--ink-mute); }
+.legal-links a:hover { color: var(--accent); text-decoration: none; }
+
+[data-lang] { display: none; }
+[data-lang].visible { display: block; }
+</style>
+</head>
+<body>
+
+<nav class="legal-nav">
+  <div class="container legal-nav-row">
+    <a href="/" class="nav-back">← Vanar</a>
+    <a href="/"><img src="assets/vanar-logo-nav.png?v=1" alt="Vanar" class="logo-img" /></a>
+    <div class="lang-toggle">
+      <button class="active" onclick="setLang('es')" id="btn-es">ES</button>
+      <button onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="legal-header">
+    <span class="eyebrow">Legal</span>
+    <div data-lang="es" class="visible">
+      <h1 class="legal-title">Política de Reembolso</h1>
+      <p class="legal-meta">Vigente desde: 3 de junio de 2026 &nbsp;·&nbsp; Vanar LLC &nbsp;·&nbsp; EIN 42-2798875</p>
+    </div>
+    <div data-lang="en">
+      <h1 class="legal-title">Refund Policy</h1>
+      <p class="legal-meta">Effective: June 3, 2026 &nbsp;·&nbsp; Vanar LLC &nbsp;·&nbsp; EIN 42-2798875</p>
+    </div>
+  </header>
+
+  <main class="legal-body">
+
+    <div class="entity-box">
+      <div class="row"><span class="label">Entidad / Entity</span><span class="val">Vanar LLC</span></div>
+      <div class="row"><span class="label">EIN</span><span class="val">42-2798875</span></div>
+      <div class="row"><span class="label">Estado / State</span><span class="val">Wyoming, Estados Unidos</span></div>
+      <div class="row"><span class="label">Dirección / Address</span><span class="val">30 N Gould St Ste N, Sheridan, WY 82801, USA</span></div>
+      <div class="row"><span class="label">Contacto / Contact</span><span class="val"><a href="mailto:aaron@vanarsi.com">aaron@vanarsi.com</a></span></div>
+    </div>
+
+    <!-- ESPAÑOL -->
+    <div data-lang="es" class="visible">
+
+      <div class="notice-box">
+        <p>Vanar LLC presta exclusivamente servicios profesionales B2B (consultoría, implementación y operación). No comercializamos productos físicos ni digitales de venta masiva. Esta política describe las condiciones bajo las cuales pueden procesarse reembolsos o créditos.</p>
+      </div>
+
+      <!-- Summary table ES -->
+      <div class="legal-section">
+        <h2>Resumen de elegibilidad</h2>
+        <table class="refund-table">
+          <thead>
+            <tr>
+              <th>Tipo de pago</th>
+              <th>Reembolso</th>
+              <th>Condición</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="type-col">Retainer mensual — período en curso</td>
+              <td><span class="badge badge-partial">Proporcional</span></td>
+              <td>Solo si Vanar incumple el Acuerdo</td>
+            </tr>
+            <tr>
+              <td class="type-col">Retainer mensual — período no iniciado</td>
+              <td><span class="badge badge-yes">Sí</span></td>
+              <td>Prepagos de períodos futuros</td>
+            </tr>
+            <tr>
+              <td class="type-col">Honorarios de diagnóstico / onboarding</td>
+              <td><span class="badge badge-no">No</span></td>
+              <td>Trabajo entregado desde el inicio</td>
+            </tr>
+            <tr>
+              <td class="type-col">Implementación — hitos completados</td>
+              <td><span class="badge badge-no">No</span></td>
+              <td>Trabajo irrecuperable ya entregado</td>
+            </tr>
+            <tr>
+              <td class="type-col">Implementación — hitos no iniciados</td>
+              <td><span class="badge badge-yes">Sí</span></td>
+              <td>Según proporción del SOW</td>
+            </tr>
+            <tr>
+              <td class="type-col">Error de facturación de Vanar</td>
+              <td><span class="badge badge-yes">Sí</span></td>
+              <td>Reembolso total del exceso</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="legal-section">
+        <h2>01 · Naturaleza de los servicios</h2>
+        <p>Los servicios de Vanar implican dedicación de tiempo, personal especializado y recursos desde el inicio de cada compromiso. A diferencia de productos físicos, los servicios profesionales consumidos no pueden "devolverse". Por ello, esta política distingue entre trabajo ya entregado (no reembolsable) y montos prepagados por trabajo aún no iniciado (reembolsables).</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>02 · Servicios mensuales continuos (retainer)</h2>
+        <h3>Cancelación por el Cliente</h3>
+        <p>El Cliente puede cancelar el servicio conforme al aviso estipulado en el Acuerdo de Servicios (generalmente 30 días). Una vez cancelado:</p>
+        <ul>
+          <li>El período de servicio en curso (mes activo) <strong>no es reembolsable</strong>, ya que los recursos han sido comprometidos y el trabajo comenzó.</li>
+          <li>Cualquier pago correspondiente a <strong>períodos futuros completos</strong> aún no iniciados será reembolsado en su totalidad.</li>
+        </ul>
+        <h3>Cancelación por incumplimiento de Vanar</h3>
+        <p>Si Vanar incumple materialmente sus obligaciones conforme al Acuerdo de Servicios y no subsana dicho incumplimiento dentro del plazo acordado, el Cliente tendrá derecho a un reembolso proporcional por los días del período en curso no prestados.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>03 · Proyectos de implementación</h2>
+        <p>Los proyectos con estructura de hitos o entregables se rigen por el calendario de pagos del Acuerdo de Servicios correspondiente:</p>
+        <ul>
+          <li><strong>Honorarios de diagnóstico, discovery u onboarding:</strong> no reembolsables una vez iniciado el trabajo, independientemente del resultado.</li>
+          <li><strong>Hitos completados y entregados:</strong> no reembolsables.</li>
+          <li><strong>Hitos no iniciados, prepagados:</strong> reembolsables en proporción al trabajo pendiente, menos gastos directos irrecuperables ya incurridos.</li>
+          <li><strong>Trabajo en progreso (WIP) al momento de cancelación:</strong> Vanar facturará el valor proporcional del trabajo realizado; el exceso pagado será reembolsado.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>04 · Errores de facturación</h2>
+        <p>Si Vanar emite una factura por un importe incorrecto superior al pactado, el Cliente deberá notificarlo dentro de los <strong>15 días naturales</strong> siguientes a la recepción de la factura. Vanar emitirá una nota de crédito o efectuará el reembolso de la diferencia dentro de los <strong>10 días hábiles</strong> posteriores a la confirmación del error.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>05 · Método de reembolso</h2>
+        <p>Los reembolsos elegibles se efectuarán mediante el mismo método de pago utilizado originalmente, salvo acuerdo escrito en contrario. El plazo de acreditación es de <strong>5 a 15 días hábiles</strong> una vez aprobada la solicitud, dependiendo del método de pago y la institución financiera.</p>
+        <p>En casos donde el reembolso en efectivo no sea operativamente viable, Vanar puede ofrecer un <strong>crédito aplicable a futuros servicios</strong> de igual valor, sujeto a la aceptación escrita del Cliente.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>06 · Proceso para solicitar un reembolso</h2>
+        <p>Para iniciar una solicitud de reembolso:</p>
+        <ul>
+          <li>Envíe un correo a <a href="mailto:aaron@vanarsi.com">aaron@vanarsi.com</a> con el asunto <strong>"Solicitud de Reembolso — [nombre de empresa]"</strong>.</li>
+          <li>Incluya: número de factura o contrato, monto pagado, fecha de pago y motivo de la solicitud.</li>
+          <li>Adjunte comprobante de pago si está disponible.</li>
+        </ul>
+        <p>Vanar acusará recibo en un plazo de <strong>2 días hábiles</strong> y emitirá una resolución dentro de los <strong>10 días hábiles</strong> siguientes. Si se aprueba el reembolso, se procesará conforme a la sección 05.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>07 · Exclusiones</h2>
+        <p>No aplica reembolso en los siguientes casos:</p>
+        <ul>
+          <li>Servicios completamente prestados conforme al Acuerdo de Servicios.</li>
+          <li>Cancelaciones realizadas fuera del plazo de aviso acordado, salvo incumplimiento de Vanar.</li>
+          <li>Insatisfacción con resultados de negocio que no estén directamente relacionados con un incumplimiento contractual de Vanar.</li>
+          <li>Solicitudes presentadas después de <strong>30 días naturales</strong> desde la fecha de la factura impugnada.</li>
+          <li>Gastos directos de terceros (licencias de software, viajes, servicios externos) ya incurridos en nombre del Cliente.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>08 · Disputas</h2>
+        <p>Si el Cliente y Vanar no logran resolver una disputa de reembolso en un plazo de 30 días, el asunto se resolverá conforme al mecanismo de resolución de disputas establecido en los Términos y Condiciones generales y/o en el Acuerdo de Servicios aplicable.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>09 · Modificaciones</h2>
+        <p>Vanar puede actualizar esta Política de Reembolso. La versión vigente siempre será la publicada en este Sitio. Para Acuerdos de Servicios activos, se aplicará la versión vigente al momento de la firma del Acuerdo salvo que ambas partes acuerden lo contrario por escrito.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>10 · Contacto</h2>
+        <p>Para cualquier consulta sobre reembolsos:</p>
+        <p><strong>Vanar LLC</strong><br/>
+        30 N Gould St Ste N, Sheridan, WY 82801, USA<br/>
+        <a href="mailto:aaron@vanarsi.com">aaron@vanarsi.com</a></p>
+      </div>
+
+    </div><!-- /es -->
+
+    <!-- ENGLISH -->
+    <div data-lang="en">
+
+      <div class="notice-box">
+        <p>Vanar LLC provides exclusively B2B professional services (consulting, implementation, and operations). We do not sell physical or mass-market digital products. This policy describes the conditions under which refunds or credits may be processed.</p>
+      </div>
+
+      <!-- Summary table EN -->
+      <div class="legal-section">
+        <h2>Eligibility Summary</h2>
+        <table class="refund-table">
+          <thead>
+            <tr>
+              <th>Payment Type</th>
+              <th>Refund</th>
+              <th>Condition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="type-col">Monthly retainer — current period</td>
+              <td><span class="badge badge-partial">Pro-rata</span></td>
+              <td>Only if Vanar breaches the Agreement</td>
+            </tr>
+            <tr>
+              <td class="type-col">Monthly retainer — future period not started</td>
+              <td><span class="badge badge-yes">Yes</span></td>
+              <td>Pre-payments for future periods</td>
+            </tr>
+            <tr>
+              <td class="type-col">Diagnostic / onboarding fees</td>
+              <td><span class="badge badge-no">No</span></td>
+              <td>Work delivered from the start</td>
+            </tr>
+            <tr>
+              <td class="type-col">Implementation — completed milestones</td>
+              <td><span class="badge badge-no">No</span></td>
+              <td>Irreversible work already delivered</td>
+            </tr>
+            <tr>
+              <td class="type-col">Implementation — milestones not started</td>
+              <td><span class="badge badge-yes">Yes</span></td>
+              <td>Per SOW proportion</td>
+            </tr>
+            <tr>
+              <td class="type-col">Vanar billing error</td>
+              <td><span class="badge badge-yes">Yes</span></td>
+              <td>Full refund of overage</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="legal-section">
+        <h2>01 · Nature of Services</h2>
+        <p>Vanar's services involve the dedication of time, specialized personnel, and resources from the start of each engagement. Unlike physical products, consumed professional services cannot be "returned." Therefore, this policy distinguishes between work already delivered (non-refundable) and prepaid amounts for work not yet started (refundable).</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>02 · Ongoing Monthly Services (Retainer)</h2>
+        <h3>Cancellation by Client</h3>
+        <p>The Client may cancel service per the notice period stipulated in the Services Agreement (generally 30 days). Upon cancellation:</p>
+        <ul>
+          <li>The current active service period (active month) is <strong>non-refundable</strong>, as resources have been committed and work has begun.</li>
+          <li>Any payment for <strong>complete future periods</strong> not yet started will be refunded in full.</li>
+        </ul>
+        <h3>Cancellation Due to Vanar's Breach</h3>
+        <p>If Vanar materially breaches its obligations under the Services Agreement and fails to cure within the agreed period, the Client is entitled to a pro-rata refund for the undelivered days of the current period.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>03 · Implementation Projects</h2>
+        <p>Projects structured around milestones or deliverables are governed by the payment schedule in the applicable Services Agreement:</p>
+        <ul>
+          <li><strong>Diagnostic, discovery, or onboarding fees:</strong> non-refundable once work begins, regardless of outcome.</li>
+          <li><strong>Completed and delivered milestones:</strong> non-refundable.</li>
+          <li><strong>Prepaid milestones not yet started:</strong> refundable in proportion to pending work, minus any irrecoverable direct costs already incurred.</li>
+          <li><strong>Work in progress (WIP) at cancellation:</strong> Vanar will invoice the proportional value of work performed; any overage paid will be refunded.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>04 · Billing Errors</h2>
+        <p>If Vanar issues an invoice for an amount exceeding what was agreed, the Client must notify us within <strong>15 calendar days</strong> of receiving the invoice. Vanar will issue a credit note or refund the difference within <strong>10 business days</strong> of confirming the error.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>05 · Refund Method</h2>
+        <p>Eligible refunds will be made via the same payment method originally used, unless otherwise agreed in writing. Processing time is <strong>5 to 15 business days</strong> after approval, depending on the payment method and financial institution.</p>
+        <p>Where a cash refund is not operationally viable, Vanar may offer a <strong>credit applicable to future services</strong> of equal value, subject to the Client's written acceptance.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>06 · How to Request a Refund</h2>
+        <p>To initiate a refund request:</p>
+        <ul>
+          <li>Send an email to <a href="mailto:aaron@vanarsi.com">aaron@vanarsi.com</a> with the subject line <strong>"Refund Request — [company name]"</strong>.</li>
+          <li>Include: invoice or contract number, amount paid, payment date, and reason for the request.</li>
+          <li>Attach proof of payment if available.</li>
+        </ul>
+        <p>Vanar will acknowledge receipt within <strong>2 business days</strong> and issue a decision within <strong>10 business days</strong>. If approved, the refund will be processed per Section 05.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>07 · Exclusions</h2>
+        <p>No refund applies in the following cases:</p>
+        <ul>
+          <li>Services fully delivered per the Services Agreement.</li>
+          <li>Cancellations outside the agreed notice period, unless due to Vanar's breach.</li>
+          <li>Dissatisfaction with business outcomes not directly linked to a contractual breach by Vanar.</li>
+          <li>Requests submitted more than <strong>30 calendar days</strong> after the date of the disputed invoice.</li>
+          <li>Third-party direct expenses (software licenses, travel, external services) already incurred on the Client's behalf.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>08 · Disputes</h2>
+        <p>If the Client and Vanar cannot resolve a refund dispute within 30 days, the matter will be resolved per the dispute resolution mechanism in the general Terms & Conditions and/or the applicable Services Agreement.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>09 · Modifications</h2>
+        <p>Vanar may update this Refund Policy. The version published on this Site is always the current one. For active Services Agreements, the version in effect at the time of signing will apply unless both parties agree otherwise in writing.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>10 · Contact</h2>
+        <p>For any refund inquiries:</p>
+        <p><strong>Vanar LLC</strong><br/>
+        30 N Gould St Ste N, Sheridan, WY 82801, USA<br/>
+        <a href="mailto:aaron@vanarsi.com">aaron@vanarsi.com</a></p>
+      </div>
+
+    </div><!-- /en -->
+
+  </main>
+</div>
+
+<footer class="legal-footer">
+  <div class="container legal-footer-row">
+    <span>© 2026 VANAR LLC · EIN 42-2798875 · SHERIDAN, WY</span>
+    <div class="legal-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund.html">Refund</a>
+      <a href="/">vanarsi.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('visible', el.dataset.lang === lang);
+  });
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang;
+  localStorage.setItem('vanar_lang', lang);
+}
+(function() {
+  const saved = localStorage.getItem('vanar_lang') || 'es';
+  if (saved === 'en') setLang('en');
+})();
+</script>
+</body>
+</html>

@@ -617,8 +617,9 @@ function Footer({ t, lang }) {
           <div className="footer-col">
             <h5>{t.footer.cols.legal}</h5>
             <ul>
-              <li><a href="#">{lang === 'en' ? 'Privacy' : 'Privacidad'}</a></li>
-              <li><a href="#">{lang === 'en' ? 'Terms' : 'Términos'}</a></li>
+              <li><a href="privacy.html">{lang === 'en' ? 'Privacy' : 'Privacidad'}</a></li>
+              <li><a href="terms.html">{lang === 'en' ? 'Terms' : 'Términos'}</a></li>
+              <li><a href="refund.html">{lang === 'en' ? 'Refund Policy' : 'Reembolso'}</a></li>
             </ul>
           </div>
         </div>
