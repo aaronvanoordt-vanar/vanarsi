@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Términos y Condiciones · Vanar LLC</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=3" />
+<link rel="shortcut icon" href="assets/favicon-32.png?v=3" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;450;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #0A1430;
+  --bg-elev: #101D43;
+  --bg-elev-2: #162552;
+  --ink: #EDF2FF;
+  --ink-soft: #A9B5D4;
+  --ink-mute: #6E7BA0;
+  --line: rgba(237,242,255,0.08);
+  --line-2: rgba(237,242,255,0.14);
+  --accent: #5A8BFF;
+  --accent-2: #87B0FF;
+  --radius: 6px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 600px) { .container { padding: 0 20px; } }
+
+.legal-nav {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+  position: sticky; top: 0;
+  background: rgba(10,20,48,0.92);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+}
+.legal-nav-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.logo-img { height: 28px; display: block; }
+.nav-back {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-mute);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.nav-back:hover { color: var(--ink); text-decoration: none; }
+.lang-toggle { display: flex; gap: 6px; }
+.lang-toggle button {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.1em;
+  border: 1px solid var(--line-2);
+  background: none; color: var(--ink-mute);
+  padding: 4px 10px; border-radius: 4px; cursor: pointer;
+  transition: all 0.15s;
+}
+.lang-toggle button.active, .lang-toggle button:hover {
+  color: var(--ink); border-color: var(--accent); background: rgba(90,139,255,0.08);
+}
+
+.legal-header { padding: 80px 0 56px; border-bottom: 1px solid var(--line); }
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--accent-2); display: inline-flex; align-items: center; gap: 10px;
+}
+.eyebrow::before {
+  content: ""; width: 24px; height: 1px;
+  background: var(--accent); display: inline-block; opacity: 0.7;
+}
+.legal-title {
+  font-size: clamp(28px, 4vw, 44px); font-weight: 500;
+  letter-spacing: -0.028em; margin: 20px 0 12px; line-height: 1.1;
+}
+.legal-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.08em; color: var(--ink-mute);
+}
+
+.legal-body { padding: 64px 0 120px; }
+.legal-section { margin-bottom: 56px; }
+.legal-section h2 {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent-2);
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0 0 20px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.legal-section h3 {
+  font-size: 15px; font-weight: 500; color: var(--ink);
+  margin: 24px 0 8px; letter-spacing: -0.01em;
+}
+.legal-section p { color: var(--ink-soft); font-size: 15px; margin-bottom: 14px; }
+.legal-section ul { margin: 0 0 14px 0; padding-left: 20px; color: var(--ink-soft); font-size: 15px; }
+.legal-section ul li { margin-bottom: 6px; }
+.entity-box {
+  background: var(--bg-elev-2); border: 1px solid var(--line-2);
+  border-radius: var(--radius); padding: 20px 24px; margin-bottom: 24px;
+}
+.entity-box .row { display: flex; gap: 8px; margin-bottom: 6px; font-size: 14px; }
+.entity-box .row:last-child { margin-bottom: 0; }
+.entity-box .label {
+  color: var(--ink-mute); min-width: 130px; font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; padding-top: 2px;
+}
+.entity-box .val { color: var(--ink-soft); }
+
+.notice-box {
+  background: rgba(90,139,255,0.06); border: 1px solid rgba(90,139,255,0.2);
+  border-radius: var(--radius); padding: 16px 20px; margin-bottom: 24px;
+}
+.notice-box p { color: var(--ink-soft); font-size: 14px; margin: 0; }
+
+.legal-footer { border-top: 1px solid var(--line); padding: 32px 0; }
+.legal-footer-row {
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.08em; color: var(--ink-mute); gap: 16px; flex-wrap: wrap;
+}
+.legal-links { display: flex; gap: 20px; }
+.legal-links a { color: var(--ink-mute); }
+.legal-links a:hover { color: var(--accent); text-decoration: none; }
+
+[data-lang] { display: none; }
+[data-lang].visible { display: block; }
+</style>
+</head>
+<body>
+
+<nav class="legal-nav">
+  <div class="container legal-nav-row">
+    <a href="/" class="nav-back">← Vanar</a>
+    <a href="/"><img src="assets/vanar-logo-nav.png?v=1" alt="Vanar" class="logo-img" /></a>
+    <div class="lang-toggle">
+      <button class="active" onclick="setLang('es')" id="btn-es">ES</button>
+      <button onclick="setLang('en')" id="btn-en">EN</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <header class="legal-header">
+    <span class="eyebrow">Legal</span>
+    <div data-lang="es" class="visible">
+      <h1 class="legal-title">Términos y Condiciones</h1>
+      <p class="legal-meta">Vigente desde: 3 de junio de 2026 &nbsp;·&nbsp; Vanar LLC &nbsp;·&nbsp; EIN 42-2798875</p>
+    </div>
+    <div data-lang="en">
+      <h1 class="legal-title">Terms & Conditions</h1>
+      <p class="legal-meta">Effective: June 3, 2026 &nbsp;·&nbsp; Vanar LLC &nbsp;·&nbsp; EIN 42-2798875</p>
+    </div>
+  </header>
+
+  <main class="legal-body">
+
+    <div class="entity-box">
+      <div class="row"><span class="label">Entidad / Entity</span><span class="val">Vanar LLC</span></div>
+      <div class="row"><span class="label">EIN</span><span class="val">42-2798875</span></div>
+      <div class="row"><span class="label">Estado / State</span><span class="val">Wyoming, Estados Unidos</span></div>
+      <div class="row"><span class="label">Dirección / Address</span><span class="val">30 N Gould St Ste N, Sheridan, WY 82801, USA</span></div>
+      <div class="row"><span class="label">Contacto / Contact</span><span class="val"><a href="mailto:aaron@vanarsi.com">aaron@vanarsi.com</a></span></div>
+    </div>
+
+    <!-- ESPAÑOL -->
+    <div data-lang="es" class="visible">
+
+      <div class="notice-box">
+        <p>Al acceder a este sitio web o contratar los servicios de Vanar LLC, usted acepta los siguientes términos y condiciones. Si no está de acuerdo con alguna disposición, le solicitamos que no utilice nuestros servicios.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>01 · Definiciones</h2>
+        <ul>
+          <li><strong>"Vanar"</strong> o <strong>"la Compañía"</strong>: Vanar LLC, LLC constituida en Wyoming, EE. UU.</li>
+          <li><strong>"Cliente"</strong>: la empresa o persona moral que contrata los servicios de Vanar.</li>
+          <li><strong>"Servicios"</strong>: los servicios de consultoría, implementación y operación descritos en cada Acuerdo de Servicios suscrito entre las partes.</li>
+          <li><strong>"Acuerdo de Servicios"</strong>: el contrato específico, propuesta o Scope of Work (SOW) firmado entre Vanar y el Cliente.</li>
+          <li><strong>"Sitio"</strong>: el sitio web vanarsi.com y sus subdominios.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>02 · Uso del sitio web</h2>
+        <p>El Sitio es de uso exclusivo informativo y comercial. Usted se compromete a:</p>
+        <ul>
+          <li>No usar el Sitio para fines ilegales o no autorizados.</li>
+          <li>No intentar acceder a sistemas o datos no públicos.</li>
+          <li>No reproducir, distribuir ni modificar contenidos del Sitio sin autorización escrita previa de Vanar.</li>
+          <li>Proporcionar información veraz en los formularios de contacto.</li>
+        </ul>
+        <p>Vanar se reserva el derecho de suspender el acceso al Sitio a cualquier usuario que incumpla estas condiciones.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>03 · Servicios profesionales</h2>
+        <p>Los servicios de Vanar se prestan conforme a los Acuerdos de Servicios individuales suscritos con cada Cliente. Estos Acuerdos prevalecen sobre cualquier disposición general de estos Términos en caso de conflicto. Los servicios comprenden, de manera enunciativa más no limitativa:</p>
+        <ul>
+          <li>Consultoría y estrategia comercial</li>
+          <li>Gestión financiera y contable</li>
+          <li>Implementación tecnológica y automatización</li>
+          <li>Operaciones logísticas</li>
+          <li>Gestión de seguros corporativos</li>
+          <li>Beneficios de salud corporativa</li>
+        </ul>
+        <p>Vanar no garantiza resultados específicos de negocio. Los resultados dependen de la colaboración del Cliente, la calidad de la información proporcionada y factores de mercado fuera del control de Vanar.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>04 · Honorarios y condiciones de pago</h2>
+        <p>Los honorarios, modalidad y calendario de pago se establecen en el Acuerdo de Servicios correspondiente. Salvo que dicho Acuerdo disponga otra cosa:</p>
+        <ul>
+          <li>Las facturas son pagaderas dentro de los <strong>15 días naturales</strong> siguientes a su emisión.</li>
+          <li>Los pagos recurrentes (mensuales) se facturan al inicio de cada período de servicio.</li>
+          <li>Los saldos vencidos generan un interés moratorio del <strong>1.5% mensual</strong> (18% anual) o el máximo permitido por la ley de Wyoming, el que resulte menor.</li>
+          <li>Vanar puede suspender los servicios ante falta de pago tras notificación escrita de 5 días hábiles.</li>
+        </ul>
+        <p>Los honorarios no incluyen impuestos, aranceles ni tasas aplicables, que serán responsabilidad del Cliente salvo pacto en contrario.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>05 · Propiedad intelectual</h2>
+        <h3>Propiedad de Vanar</h3>
+        <p>Vanar retiene todos los derechos de propiedad intelectual sobre su metodología, herramientas, software, plantillas y materiales propietarios, independientemente de que sean utilizados en la prestación de servicios al Cliente.</p>
+        <h3>Propiedad del Cliente</h3>
+        <p>El Cliente retiene la propiedad de sus datos, información confidencial, marcas y materiales propios. El Cliente otorga a Vanar una licencia no exclusiva para usar dichos materiales exclusivamente en la prestación de los Servicios.</p>
+        <h3>Entregables</h3>
+        <p>Salvo disposición expresa en el Acuerdo de Servicios, los entregables específicamente creados para el Cliente (reportes, configuraciones, integraciones) pasan a ser propiedad del Cliente una vez realizado el pago íntegro correspondiente.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>06 · Confidencialidad</h2>
+        <p>Ambas partes acuerdan mantener en estricta confidencialidad toda información designada como confidencial o que, por su naturaleza, deba razonablemente considerarse como tal. Esta obligación sobrevive a la terminación del Acuerdo de Servicios por un período de <strong>3 años</strong>, salvo que el Acuerdo disponga un plazo mayor.</p>
+        <p>Se exceptúan de esta obligación: (i) información de dominio público no por incumplimiento de las partes; (ii) información recibida lícitamente de un tercero sin restricciones; (iii) información que deba revelarse por mandato legal.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>07 · Limitación de responsabilidad</h2>
+        <p>En la máxima medida permitida por la ley aplicable:</p>
+        <ul>
+          <li>La responsabilidad total de Vanar por cualquier reclamación derivada del Acuerdo de Servicios no excederá el importe pagado por el Cliente en los <strong>3 meses previos</strong> al evento que da origen a la reclamación.</li>
+          <li>Vanar no será responsable por daños indirectos, incidentales, especiales, consecuentes ni lucro cesante, aun cuando haya sido advertida de su posibilidad.</li>
+          <li>Vanar no garantiza que el Sitio esté libre de errores, interrupciones o virus.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>08 · Indemnización</h2>
+        <p>El Cliente indemnizará y mantendrá indemne a Vanar frente a cualquier reclamación, daño, pérdida o gasto (incluidos honorarios legales razonables) que surja de: (i) el incumplimiento de estos Términos o del Acuerdo de Servicios por parte del Cliente; (ii) el uso indebido de los Servicios; (iii) la infracción de derechos de terceros por parte del Cliente.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>09 · Terminación</h2>
+        <p>Cualquiera de las partes puede dar por terminado el Acuerdo de Servicios conforme a las condiciones establecidas en dicho Acuerdo. En ausencia de disposición específica:</p>
+        <ul>
+          <li>Cualquier parte puede terminar por conveniencia con <strong>30 días de aviso escrito</strong>.</li>
+          <li>Vanar puede terminar de forma inmediata ante incumplimiento material del Cliente no subsanado en 10 días hábiles tras notificación.</li>
+          <li>Las obligaciones de pago devengadas, confidencialidad y limitación de responsabilidad sobreviven a la terminación.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>10 · Ley aplicable y resolución de disputas</h2>
+        <p>Estos Términos y cualquier Acuerdo de Servicios se rigen por las leyes del Estado de Wyoming, EE. UU., sin consideración a sus normas de conflicto de leyes.</p>
+        <p>Cualquier disputa que no pueda resolverse amigablemente en un plazo de 30 días se someterá a arbitraje vinculante administrado por la American Arbitration Association (AAA), bajo sus Reglas Comerciales, con sede en Sheridan, Wyoming. El idioma del arbitraje será el español o inglés, según acuerden las partes. La resolución arbitral será definitiva y vinculante.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>11 · Modificaciones</h2>
+        <p>Vanar puede actualizar estos Términos periódicamente. Los cambios se publicarán en este Sitio con la fecha de actualización. El uso continuado del Sitio o de los Servicios después de la publicación de cambios materiales constituye aceptación de los nuevos términos. Para contratos vigentes, los cambios materiales requerirán consentimiento escrito del Cliente.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>12 · Contacto</h2>
+        <p>Para consultas sobre estos Términos:</p>
+        <p><strong>Vanar LLC</strong><br/>
+        30 N Gould St Ste N, Sheridan, WY 82801, USA<br/>
+        <a href="mailto:aaron@vanarsi.com">aaron@vanarsi.com</a></p>
+      </div>
+
+    </div><!-- /es -->
+
+    <!-- ENGLISH -->
+    <div data-lang="en">
+
+      <div class="notice-box">
+        <p>By accessing this website or engaging Vanar LLC's services, you agree to the following terms and conditions. If you do not agree with any provision, please do not use our services.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>01 · Definitions</h2>
+        <ul>
+          <li><strong>"Vanar"</strong> or <strong>"the Company"</strong>: Vanar LLC, a limited liability company formed in Wyoming, USA.</li>
+          <li><strong>"Client"</strong>: the company or legal entity engaging Vanar's services.</li>
+          <li><strong>"Services"</strong>: the consulting, implementation, and operational services described in each Services Agreement.</li>
+          <li><strong>"Services Agreement"</strong>: the specific contract, proposal, or Scope of Work (SOW) executed between Vanar and the Client.</li>
+          <li><strong>"Site"</strong>: the website vanarsi.com and its subdomains.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>02 · Use of the Website</h2>
+        <p>The Site is for informational and commercial purposes only. You agree to:</p>
+        <ul>
+          <li>Not use the Site for illegal or unauthorized purposes.</li>
+          <li>Not attempt to access non-public systems or data.</li>
+          <li>Not reproduce, distribute, or modify Site content without prior written authorization from Vanar.</li>
+          <li>Provide accurate information in contact forms.</li>
+        </ul>
+        <p>Vanar reserves the right to suspend Site access to any user who violates these conditions.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>03 · Professional Services</h2>
+        <p>Vanar's services are delivered pursuant to individual Services Agreements with each Client. These Agreements prevail over these general Terms in the event of conflict. Services include, without limitation:</p>
+        <ul>
+          <li>Commercial consulting and strategy</li>
+          <li>Financial and accounting management</li>
+          <li>Technology implementation and automation</li>
+          <li>Logistics operations</li>
+          <li>Corporate insurance management</li>
+          <li>Corporate health benefits</li>
+        </ul>
+        <p>Vanar does not guarantee specific business outcomes. Results depend on Client collaboration, quality of information provided, and market factors outside Vanar's control.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>04 · Fees and Payment Terms</h2>
+        <p>Fees, payment modality, and schedule are set forth in the applicable Services Agreement. Unless that Agreement specifies otherwise:</p>
+        <ul>
+          <li>Invoices are due within <strong>15 calendar days</strong> of issuance.</li>
+          <li>Recurring (monthly) payments are invoiced at the start of each service period.</li>
+          <li>Overdue balances accrue late fees at <strong>1.5% per month</strong> (18% annually) or the maximum permitted by Wyoming law, whichever is lower.</li>
+          <li>Vanar may suspend services for non-payment after 5 business days' written notice.</li>
+        </ul>
+        <p>Fees exclude any applicable taxes, duties, or levies, which are the Client's responsibility unless otherwise agreed.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>05 · Intellectual Property</h2>
+        <h3>Vanar's Property</h3>
+        <p>Vanar retains all intellectual property rights in its methodology, tools, software, templates, and proprietary materials, regardless of whether they are used in delivering services to the Client.</p>
+        <h3>Client's Property</h3>
+        <p>The Client retains ownership of its data, confidential information, trademarks, and materials. The Client grants Vanar a non-exclusive license to use such materials solely for delivering the Services.</p>
+        <h3>Deliverables</h3>
+        <p>Unless expressly stated in the Services Agreement, deliverables specifically created for the Client (reports, configurations, integrations) become Client property upon full payment.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>06 · Confidentiality</h2>
+        <p>Both parties agree to keep strictly confidential all information designated as confidential or that, by its nature, should reasonably be considered as such. This obligation survives termination for <strong>3 years</strong>, unless the Services Agreement provides a longer period.</p>
+        <p>Exceptions include: (i) information in the public domain not due to breach; (ii) information lawfully received from a third party without restriction; (iii) information required to be disclosed by law.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>07 · Limitation of Liability</h2>
+        <p>To the maximum extent permitted by applicable law:</p>
+        <ul>
+          <li>Vanar's total liability for any claim arising from a Services Agreement shall not exceed the amounts paid by the Client in the <strong>3 months prior</strong> to the event giving rise to the claim.</li>
+          <li>Vanar is not liable for indirect, incidental, special, consequential, or lost-profit damages, even if advised of their possibility.</li>
+          <li>Vanar does not warrant that the Site will be error-free, uninterrupted, or virus-free.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>08 · Indemnification</h2>
+        <p>The Client shall indemnify and hold harmless Vanar from any claims, damages, losses, or expenses (including reasonable legal fees) arising from: (i) Client's breach of these Terms or Services Agreement; (ii) misuse of the Services; (iii) Client's infringement of third-party rights.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>09 · Termination</h2>
+        <p>Either party may terminate the Services Agreement per its terms. In the absence of specific provisions:</p>
+        <ul>
+          <li>Either party may terminate for convenience with <strong>30 days' written notice</strong>.</li>
+          <li>Vanar may terminate immediately upon material Client breach not cured within 10 business days of notice.</li>
+          <li>Payment obligations, confidentiality, and limitation of liability survive termination.</li>
+        </ul>
+      </div>
+
+      <div class="legal-section">
+        <h2>10 · Governing Law and Dispute Resolution</h2>
+        <p>These Terms and any Services Agreement are governed by the laws of the State of Wyoming, USA, without regard to its conflict-of-law rules.</p>
+        <p>Any dispute not resolved amicably within 30 days shall be submitted to binding arbitration administered by the American Arbitration Association (AAA) under its Commercial Rules, seated in Sheridan, Wyoming. The arbitration shall be conducted in English or Spanish as agreed by the parties. The arbitral award shall be final and binding.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>11 · Modifications</h2>
+        <p>Vanar may update these Terms periodically. Changes will be posted on this Site with the updated date. Continued use of the Site or Services after publication of material changes constitutes acceptance of the new terms. For existing contracts, material changes require the Client's written consent.</p>
+      </div>
+
+      <div class="legal-section">
+        <h2>12 · Contact</h2>
+        <p>For inquiries about these Terms:</p>
+        <p><strong>Vanar LLC</strong><br/>
+        30 N Gould St Ste N, Sheridan, WY 82801, USA<br/>
+        <a href="mailto:aaron@vanarsi.com">aaron@vanarsi.com</a></p>
+      </div>
+
+    </div><!-- /en -->
+
+  </main>
+</div>
+
+<footer class="legal-footer">
+  <div class="container legal-footer-row">
+    <span>© 2026 VANAR LLC · EIN 42-2798875 · SHERIDAN, WY</span>
+    <div class="legal-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund.html">Refund</a>
+      <a href="/">vanarsi.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('visible', el.dataset.lang === lang);
+  });
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.documentElement.lang = lang;
+  localStorage.setItem('vanar_lang', lang);
+}
+(function() {
+  const saved = localStorage.getItem('vanar_lang') || 'es';
+  if (saved === 'en') setLang('en');
+})();
+</script>
+</body>
+</html>
